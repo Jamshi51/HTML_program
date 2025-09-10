@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Register </h1>
+            <form name="verification" onsubmit="return Validation()" >
+                <div class="input-box">
+                    <label><input type=name name=Username placeholder="Username"></label>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <label><input type=email name=email placeholder="Email id"></label>
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <label><input type="password" name="password" placeholder="Create Password" oninput="Validate_password()"required></label>
+                    <i class="fa-solid fa-eye toggle-password"></i>   
+                    <span id="passmsg" style="color: black;"></span>           
+                </div>
+                <div class="input-box">
+                    <label><input type="password" name="pswrd" placeholder="Conform Password"></label>
+                    <i class="fa-solid fa-eye toggle-password"></i>
+                </div>
+                <div class="btn-input">
+                    <button type="submit" name="register">Register</button>
+                </div>
+                <div class="input-box">
+                    <p style="text-align: center;margin-top: 6px;">Already have an account?<a href="login_page.html" class="Reg-cls">Login</a></p>
+                </div>
+            </form>
+        </div>
+       
+
+            <script>
+
+                 function Validate_password(){
+                    let pswrd=document.forms["verification"]["password"].value;
+                    let c = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^+=!])[A-Za-z0-9@#$%^+=!]{8,}$/;
+                    let pswrderror=document.getElementById("passmsg");
+                    console.log(c.test(pswrd))
+                    if (!c.test(pswrd)) {
+                        pswrderror.innerHTML=`<ul>
+                            <li>Atleast one Uppercase</li>
+                            <li>Atleast one Lowerercase</li>
+                            <li>Atleast one spcl symbol</li>
+                            <li>Atleast one digit</li>
+                            </ul>`
+
+                        return false
+                    }
+                    else{
+                        pswrderror.textContent=" "
+                        return true
+                    }
+
+
+                }
+                function Validation(){
+                    if (Validate_password()){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+
+
+               
+            </script>
+      
+    </body>
+</html>

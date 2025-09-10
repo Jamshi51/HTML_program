@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Craftwings</Title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+
+                background-image: url('https://www.shutterstock.com/image-photo/variety-art-supplies-paintbrushes-palette-600nw-2524885815.jpg');
+                background-size: cover;
+                
+                background-repeat: no-repeat;
+                
+              
+            }
+            *{
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+                
+            }
+
+            ul{
+                display: flex;
+                list-style: none;
+                justify-content: space-between;
+                
+                
+            }
+            ul li{
+                font-size: 25px;
+            }
+            @media (max-width:500px){
+                ul{
+                    flex-direction: column;
+                }
+                ul li{
+                    padding: 20px;
+                    border:1px solid black;
+                }  
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a> </li>
+                <li><a href="register_page.html">Register</a></li>
+                <li><a href="login_page.html">Login</a></li>
+                
+            </ul>
+        </nav>
+    </body>
+</html>
